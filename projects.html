@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Ella Faith Albano</title>
+<style>
+:root { --header-height: var(--nav-h, 64px); }
+html { scroll-padding-top: var(--header-height); }
+h1, h2, h3 { scroll-margin-top: calc(var(--header-height) + 0.5rem); }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7EF;--soft-white:#FFFDF9;--ink:#1A1612;--ink-muted:#5C5449;--coral:#E8533A;--coral-light:#FAEAE6;--sky:#3D7EBF;--sky-light:#E4EFF9;--lime:#6BBF3D;--lime-light:#EAF5E2;--marigold:#F2A83B;--marigold-light:#FDF2DC;--lavender:#8B6FD4;--lavender-light:#EEE9FA;--pink:#D44F7A;--pink-light:#FAEAF1;--border:rgba(26,22,18,0.1);--nav-h:64px}
+  *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;overflow-x:hidden}
+  nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--cream);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:100}
+  .nav-logo{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;color:var(--ink);text-decoration:none}
+  .nav-links{display:flex;gap:0.25rem;list-style:none}
+  .nav-links a{font-size:0.875rem;font-weight:500;color:var(--ink-muted);text-decoration:none;padding:0.4rem 0.75rem;border-radius:999px;transition:all 0.2s}
+  .nav-links a:hover,.nav-links a.active{background:var(--ink);color:var(--cream)}
+  .page-wrap{max-width:900px;margin:0 auto;padding:calc(var(--nav-h) + 3rem) 2rem 5rem}
+  .page-title{font-family:'Fraunces',serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:600;line-height:1.0;margin-bottom:0.5rem;margin-top:1.5rem}
+  .page-title em{font-style:italic;font-weight:300;color:var(--coral)}
+  .page-sub{font-size:0.95rem;color:var(--ink-muted);margin-bottom:2.5rem}
+  .filter-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem}
+  .filter-btn{font-size:0.8rem;font-weight:500;padding:0.3rem 0.85rem;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--ink-muted);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+  .filter-btn:hover,.filter-btn.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+  .project-card{background:var(--soft-white);border:1px solid var(--border);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--ink);transition:transform 0.25s cubic-bezier(0.22,1,0.36,1),box-shadow 0.25s ease;display:flex;flex-direction:column}
+  .project-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(26,22,18,0.1)}
+  .project-card.wide{grid-column:1/-1;flex-direction:row}
+  .project-thumb{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:3rem;flex-shrink:0}
+  .project-card.wide .project-thumb{width:280px;aspect-ratio:unset;min-height:200px}
+  .project-body{padding:1.25rem;flex:1}
+  .project-tag{font-size:0.7rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;color:var(--coral)}
+  .project-title{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;line-height:1.25;margin-bottom:0.5rem}
+  .project-card.wide .project-title{font-size:1.35rem}
+  .project-desc{font-size:0.85rem;color:var(--ink-muted);line-height:1.55}
+  .project-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.85rem}
+  .project-tag-pill{font-size:0.75rem;padding:0.2rem 0.55rem;border-radius:6px;background:var(--cream);border:1px solid var(--border);color:var(--ink-muted)}
+  footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:0.8rem;color:var(--ink-muted)}
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1)}
+  .fade-in.visible{opacity:1;transform:none}
+  .stagger-children>*{opacity:0;transform:translateY(24px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1)}
+  .stagger-children.visible>*:nth-child(1){opacity:1;transform:none;transition-delay:0s}
+  .stagger-children.visible>*:nth-child(2){opacity:1;transform:none;transition-delay:0.08s}
+  .stagger-children.visible>*:nth-child(3){opacity:1;transform:none;transition-delay:0.16s}
+  .stagger-children.visible>*:nth-child(4){opacity:1;transform:none;transition-delay:0.24s}
+  .stagger-children.visible>*:nth-child(5){opacity:1;transform:none;transition-delay:0.32s}
+  .stagger-children.visible>*:nth-child(6){opacity:1;transform:none;transition-delay:0.40s}
+  @media(max-width:700px){nav{padding:0 1rem}.nav-links{display:none}.page-wrap{padding-top:calc(var(--nav-h)+2.5rem);padding-left:1rem;padding-right:1rem}.projects-grid{grid-template-columns:1fr}.project-card.wide{flex-direction:column}.project-card.wide .project-thumb{width:100%}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="ella-portfolio.html" class="nav-logo">ella faith.</a>
+  <ul class="nav-links">
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+  </ul>
+</nav>
+<div class="page-wrap">
+  <div class="fade-in">
+    <h1 class="page-title">Things I've<br><em>worked on.</em></h1>
+    <p class="page-sub">Personal projects, class work, and everything in between.</p>
+  </div>
+  <div class="filter-row fade-in">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="class">Class</button>
+    <button class="filter-btn" data-filter="personal">Personal</button>
+    <button class="filter-btn" data-filter="marketing">Marketing</button>
+    <button class="filter-btn" data-filter="events">Events</button>
+    <button class="filter-btn" data-filter="brand">Brand Management</button>
+    <button class="filter-btn" data-filter="research">Research</button>
+  </div>
+  <div class="projects-grid stagger-children">
+
+    <div class="project-card" data-category="marketing events">
+      <div class="project-thumb" style="background:var(--lime-light)">🧭</div>
+      <div class="project-body">
+        <div class="project-tag">Marketing · Events</div>
+        <div class="project-title">Scout Conference, Conference Marketer</div>
+        <p class="project-desc">Led promotional strategy for one of the largest student-run events on campus. Managed social content, coordinated outreach, and built materials that drove attendance and awareness.</p>
+        <div class="project-tags">
+          <span class="project-tag-pill">Event Marketing</span><span class="project-tag-pill">Social Media</span><span class="project-tag-pill">Brand Strategy</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="research class">
+      <div class="project-thumb" style="background:var(--marigold-light)">🌿</div>
+      <div class="project-body">
+        <div class="project-tag">Research · Class</div>
+        <div class="project-title">Rooted Living, Marketing Communications Strategy</div>
+        <p class="project-desc">Group market research study for Rooted Living, a vegan granola brand. Surveyed 88 participants to analyze how social media, influencer partnerships, and brand messaging can grow a health-conscious customer base. Covered five research problems including advertising strategy, consumer values, and sustainability positioning.</p>
+        <div class="project-tags">
+          <span class="project-tag-pill">Marketing Research</span><span class="project-tag-pill">Survey Design</span><span class="project-tag-pill">Consumer Behavior</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="research">
+      <div class="project-thumb" style="background:var(--sky-light)">📊</div>
+      <div class="project-body">
+        <div class="project-tag">Research</div>
+        <div class="project-title">Decision Fatigue Experiment</div>
+        <p class="project-desc">Designed and ran a 2x2 between-subjects factorial experiment studying decision fatigue. Analyzed survey results and presented findings with visualizations in R.</p>
+        <div class="project-tags">
+          <span class="project-tag-pill">Marketing Research</span><span class="project-tag-pill">R / RStudio</span><span class="project-tag-pill">Survey Design</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="class brand">
+      <div class="project-thumb" style="background:var(--lavender-light)">🧠</div>
+      <div class="project-body">
+        <div class="project-tag">Class · Brand Management</div>
+        <div class="project-title">MyMental Brand Strategy</div>
+        <p class="project-desc">Full brand analysis for MyMental Ltd, a UK wellness company. Covered SWOT, Ansoff's Matrix, growth opportunities, and audience persona development.</p>
+        <div class="project-tags">
+          <span class="project-tag-pill">Brand Strategy</span><span class="project-tag-pill">SWOT Analysis</span><span class="project-tag-pill">Audience Personas</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="class research">
+      <div class="project-thumb" style="background:var(--coral-light)">💬</div>
+      <div class="project-body">
+        <div class="project-tag">Class · Research</div>
+        <div class="project-title">Discord Parent Guide</div>
+        <p class="project-desc">Designed a parent-facing pamphlet breaking down how Discord works, how young people use it, and what parents should know to keep their kids safe online. Created as part of Youth and Communication Technology.</p>
+        <div class="project-tags">
+          <span class="project-tag-pill">Design</span><span class="project-tag-pill">Youth & Media</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="personal">
+      <div class="project-thumb" style="background:var(--pink-light)">📺</div>
+      <div class="project-body">
+        <div class="project-tag">Personal</div>
+        <div class="project-title">TV &amp; Movie Tracker</div>
+        <p class="project-desc">A very organized personal spreadsheet tracking every show and movie watched, complete with ratings, notes, and categories. Started in 2019 and still going strong.</p>
+        <div class="project-tags">
+          <span class="project-tag-pill">Personal</span><span class="project-tag-pill">Data Organization</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer><p>© 2026 Ella Faith Albano · <a href="index.html" style="color:var(--ink-muted)">Back to home</a></p></footer>
+<script>
+  const els=document.querySelectorAll('.fade-in,.stagger-children');
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.1});
+  els.forEach(el=>obs.observe(el));
+  const filterBtns=document.querySelectorAll('.filter-btn');
+  const cards=document.querySelectorAll('.project-card');
+  filterBtns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      filterBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter=btn.dataset.filter;
+      cards.forEach(card=>{
+        const cats=card.dataset.category.split(' ');
+        card.style.display=(filter==='all'||cats.includes(filter))?'':'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

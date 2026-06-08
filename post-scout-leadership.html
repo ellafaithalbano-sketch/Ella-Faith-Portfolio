@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building Scout Forward — Ella Faith Albano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7EF;--soft-white:#FFFDF9;--ink:#1A1612;--ink-muted:#5C5449;--coral:#E8533A;--border:rgba(26,22,18,0.1);--nav-h:64px}
+  *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;overflow-x:hidden}
+  nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--cream);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:100}
+  .nav-logo{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;color:var(--ink);text-decoration:none}
+  .nav-links{display:flex;gap:0.25rem;list-style:none}
+  .nav-links a{font-size:0.875rem;font-weight:500;color:var(--ink-muted);text-decoration:none;padding:0.4rem 0.75rem;border-radius:999px;transition:all 0.2s}
+  .nav-links a:hover{background:var(--ink);color:var(--cream)}
+  .post-wrap{max-width:680px;margin:0 auto;padding:calc(var(--nav-h)+4rem) 2rem 6rem}
+  .post-tag{font-size:0.72rem;font-weight:500;text-transform:uppercase;letter-spacing:0.12em;color:var(--coral);margin-bottom:1rem}
+  .post-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:600;line-height:1.15;margin-bottom:1rem}
+  .post-meta{font-size:0.82rem;color:var(--ink-muted);margin-bottom:2rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .post-meta-divider{color:var(--border)}
+  .post-body{font-size:1.05rem;line-height:1.8;color:var(--ink)}
+  .post-body p{margin-bottom:1.4rem}
+  .post-body h2{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;margin:2.5rem 0 0.75rem;color:var(--ink)}
+  .post-image{margin:2rem auto;max-width:620px;width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+  .post-image img{width:100%;display:block;object-fit:cover}
+  .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin:2rem 0}
+  .photo-slot{aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--soft-white);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--ink-muted);text-align:center;padding:0.5rem}
+  .photo-slot img{width:100%;height:100%;object-fit:cover;display:block}
+  @media(max-width:500px){.photo-grid{grid-template-columns:1fr}}
+  .post-footer{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .post-tags{display:flex;gap:0.4rem;flex-wrap:wrap}
+  .post-tag-pill{font-size:0.75rem;padding:0.2rem 0.6rem;border-radius:6px;background:var(--soft-white);border:1px solid var(--border);color:var(--ink-muted)}
+  .btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.6rem 1.2rem;border-radius:999px;font-size:0.85rem;font-weight:500;text-decoration:none;border:1.5px solid;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--border)}
+  .btn-outline:hover{border-color:var(--ink)}
+  footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:0.8rem;color:var(--ink-muted)}
+  @media(max-width:700px){nav{padding:0 1rem}.nav-links{display:none}.post-wrap{padding-top:calc(var(--nav-h)+2.5rem);padding-left:1.25rem;padding-right:1.25rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="ella-portfolio.html" class="nav-logo">ella faith.</a>
+  <ul class="nav-links">
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+  </ul>
+</nav>
+
+<div class="post-wrap">
+  <div class="post-tag">Professional</div>
+  <h1 class="post-title">Building Scout Forward</h1>
+  <div class="post-meta">
+    <span>By Ella Faith Albano</span>
+    <span class="post-meta-divider">·</span>
+    <span>May 2026</span>
+  </div>
+
+  <div class="post-body">
+    <p>This school year, I had the amazing opportunity to be Operations Director of Scout, Northeastern University's only design collective. A role that got me more involved with a great organization, Northeastern, and many talented people in the design and start-up world.</p>
+
+    <p>There are four main teams within Scout: Studio, Labs, Conference, and Operations. Studio is the largest team, working with the Northeastern entrepreneurial ecosystem, mostly start-ups founded by NU students or alumni, that offer design, web development, and media production services. Labs offers similar work but focuses more on research and nonprofits. Conference, the team I was on before becoming Operations Director, works all academic year to put together Scout's annual design conference held every March, building out its own designs, securing speakers, gaining sponsorships, and coordinating the many moving parts that make a large one-day event possible. Then there's Operations, split into two sub-teams: Community, which focuses on internal programming and bringing Scout's teams together, and Marketing & Events, which creates external events and communications for the wider Northeastern audience.</p>
+
+    <div class="post-image"><img src="images/scout-1.jpg" alt="Scout" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;height:220px;align-items:center;justify-content:center;font-size:0.8rem;color:var(--ink-muted)">📷 Add photo — scout-1.jpg</div></div>
+
+    <h2>What the Role Actually Looked Like</h2>
+    <p>When I stepped into the role, I quickly realized that "operations" is both everything and hard to explain. The Executive Director and I worked hard as we were the faces of Scout and the engine behind the scenes keeping everything running. On any given week, I was managing our Slack and Notion workspaces to make sure information was organized and accessible across all four teams, tracking Scout's finances and collaborating with the Executive Director on budgeting, and handling onboarding and offboarding processes as members came and went each semester.</p>
+
+    <p>One of my favorite parts of the role was the logistics work that, while not glamorous, has real impact on Scout's future. I took the lead on Scout's Mosaic funding application, our sole source of spending money as an organization. That process taught me a lot about how to tell an organization's story through numbers and programming. We worked with 7 clients one semester and grew to 8 the next, hosted end-of-semester showcases that drew 80+ external guests, and ran retreats, alumni workshops, and organization collabs. Making the case for continued funding meant understanding exactly what we'd spent, why it mattered, and what we needed to grow.</p>
+
+    <div class="post-image"><img src="images/scout-2.jpg" alt="Scout" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;height:220px;align-items:center;justify-content:center;font-size:0.8rem;color:var(--ink-muted)">📷 Add photo — scout-2.jpg</div></div>
+
+    <p>On top of the day-to-day, I had weekly meetings with our faculty advisor to discuss bigger-picture questions: how do we make Scout more financially sustainable? What does the future of student-led design consulting look like at Northeastern? These conversations pushed me to think beyond semester timelines and consider what Scout could become.</p>
+
+    <h2>What I Learned</h2>
+    <p>I came into this role having spent a year on the Conference team, which gave me a deep appreciation for how much effort goes into Scout's most visible moments. But Operations taught me something different — that the less visible work is what makes the visible work possible.</p>
+
+    <p>The skills I built here felt different from anything I'd done in a classroom or even at a co-op. Managing finances for a student organization with no outside funding sources, thinking about institutional memory and knowledge transfer, figuring out how to recruit and retain members in a competitive campus environment, different types of challenges outside of a strict academic coursework.</p>
+
+    <div class="post-image"><img src="images/scout-3.jpg" alt="Scout" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;height:220px;align-items:center;justify-content:center;font-size:0.8rem;color:var(--ink-muted)">📷 Add photo — scout-3.jpg</div></div>
+
+    <p>I also learned what it means to hold a leadership role that's more facilitative than directive. As Operations Director, my job wasn't to produce design work, it was to make sure the people who did that work had everything they needed to succeed. That quiet, supportive kind of leadership is something I want to carry with me.</p>
+
+    <p>Scout will keep growing. I feel proud to have been part of such a great organization that will continue to do great things. I hope that I will still get the chance to be a part of it, but no longer in leadership. Here's to whatever Scout becomes next.</p>
+  </div>
+
+  <div class="post-footer">
+    <div class="post-tags">
+      <span class="post-tag-pill">Professional</span>
+    </div>
+    <a href="blog.html" class="btn btn-outline">← Back to blog</a>
+  </div>
+</div>
+
+<footer><p>© 2026 Ella Faith Albano · <a href="index.html" style="color:var(--ink-muted)">Back to home</a></p></footer>
+</body>
+</html>

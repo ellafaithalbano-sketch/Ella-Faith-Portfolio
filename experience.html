@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Ella Faith Albano</title>
+<style>
+:root { --header-height: var(--nav-h, 64px); }
+html { scroll-padding-top: var(--header-height); }
+h1, h2, h3 { scroll-margin-top: calc(var(--header-height) + 0.5rem); }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7EF;--soft-white:#FFFDF9;--ink:#1A1612;--ink-muted:#5C5449;--coral:#E8533A;--coral-light:#FAEAE6;--sky:#3D7EBF;--sky-light:#E4EFF9;--lime:#6BBF3D;--lime-light:#EAF5E2;--marigold:#F2A83B;--marigold-light:#FDF2DC;--lavender:#8B6FD4;--lavender-light:#EEE9FA;--pink:#D44F7A;--pink-light:#FAEAF1;--border:rgba(26,22,18,0.1);--nav-h:64px}
+  *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;overflow-x:hidden}
+  nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--cream);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:100}
+  .nav-logo{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;color:var(--ink);text-decoration:none}
+  .nav-links{display:flex;gap:0.25rem;list-style:none}
+  .nav-links a{font-size:0.875rem;font-weight:500;color:var(--ink-muted);text-decoration:none;padding:0.4rem 0.75rem;border-radius:999px;transition:all 0.2s}
+  .nav-links a:hover,.nav-links a.active{background:var(--ink);color:var(--cream)}
+  .page-wrap{max-width:900px;margin:0 auto;padding:calc(var(--nav-h) + 3rem) 2rem 5rem}
+  .page-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:600;line-height:1.1;margin-bottom:0.5rem;margin-top:1.5rem}
+  .page-title em{font-style:italic;font-weight:300;color:var(--coral)}
+  .page-sub{font-size:0.95rem;color:var(--ink-muted);margin-bottom:3rem}
+
+  .section-label{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;margin-bottom:1.5rem;margin-top:3rem}
+  .section-label em{font-style:italic;font-weight:300;color:var(--coral)}
+
+  /* TIMELINE */
+  .exp-timeline{position:relative;padding-left:1.5rem;margin-bottom:1rem}
+  .exp-timeline::before{content:'';position:absolute;left:0;top:0.5rem;bottom:0;width:2px;background:var(--border);border-radius:2px;transform-origin:top;transform:scaleY(0);transition:transform 1.2s cubic-bezier(0.22,1,0.36,1)}
+  .exp-timeline.line-drawn::before{transform:scaleY(1)}
+  .exp-item{position:relative;margin-bottom:2.5rem}
+  .exp-item::before{content:'';position:absolute;left:-1.5rem;top:0.5rem;width:10px;height:10px;border-radius:50%;background:var(--cream);border:2px solid var(--ink);transform:translateX(-4px) scale(0);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+  .exp-item.dot-visible::before{transform:translateX(-4px) scale(1)}
+  .exp-meta{display:flex;align-items:baseline;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.3rem}
+  .exp-org{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600}
+  .exp-period{font-size:0.8rem;color:var(--ink-muted);padding:0.15rem 0.6rem;background:var(--cream);border:1px solid var(--border);border-radius:999px}
+  .exp-role{font-size:0.9rem;font-weight:500;color:var(--coral);margin-bottom:0.5rem}
+  .exp-desc{font-size:0.9rem;color:var(--ink-muted);line-height:1.65}
+  .exp-bullets{margin-top:0.5rem;padding-left:1.1rem}
+  .exp-bullets li{font-size:0.88rem;color:var(--ink-muted);line-height:1.6;margin-bottom:0.3rem}
+
+  .club-subroles{display:flex;flex-direction:column;gap:0}
+  .club-subrole{padding-top:0.75rem;margin-top:0.75rem;border-top:1px solid var(--border)}
+  .club-subrole:first-child{border-top:none;padding-top:0;margin-top:0}
+  /* CLUBS GRID */
+  .clubs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+  .club-card{background:var(--soft-white);border:1px solid var(--border);border-radius:16px;padding:1.25rem}
+  .club-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:0.75rem}
+  .club-name{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;margin-bottom:0.2rem}
+  .club-role{font-size:0.82rem;font-weight:500;color:var(--coral);margin-bottom:0.4rem}
+  .club-period{font-size:0.78rem;color:var(--ink-muted);margin-bottom:0.5rem}
+  .club-desc{font-size:0.82rem;color:var(--ink-muted);line-height:1.5}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem}
+  .skill-group{background:var(--soft-white);border:1px solid var(--border);border-radius:16px;padding:1.25rem}
+  .skill-group-label{font-size:0.7rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-muted);margin-bottom:0.75rem}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+  .skill-tag{font-size:0.8rem;padding:0.25rem 0.6rem;border-radius:6px;background:var(--cream);border:1px solid var(--border);color:var(--ink)}
+
+  .skills-rows{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--soft-white);margin-top:1.5rem}
+  .skill-row{display:flex;align-items:flex-start;gap:1.5rem;padding:1rem 1.25rem;border-bottom:1px solid var(--border)}
+  .skill-row:last-child{border-bottom:none}
+  .skill-row-label{font-size:0.72rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-muted);min-width:90px;padding-top:0.3rem;flex-shrink:0}
+  .skill-row-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+  .skill-tag{font-size:0.82rem;padding:0.28rem 0.7rem;border-radius:6px;background:var(--cream);border:1px solid var(--border);color:var(--ink)}
+  .skills-constellation{position:relative;height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-top:1.5rem}
+  .constellation-center{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:600;color:var(--ink);text-align:center;position:relative;z-index:2;pointer-events:none;line-height:1.1}
+  .s-tag{position:absolute;font-size:0.82rem;font-weight:500;padding:0.35rem 0.8rem;border-radius:999px;border:1.5px solid var(--border);background:var(--soft-white);color:var(--ink-muted);white-space:nowrap;transform:translate(var(--tx),var(--ty)) rotate(var(--r));transition:background 0.2s,color 0.2s,border-color 0.2s,transform 0.2s;cursor:default}
+  .s-tag:hover{background:var(--ink);color:var(--cream);border-color:var(--ink);transform:translate(var(--tx),var(--ty)) rotate(0deg) scale(1.05)}
+  footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:0.8rem;color:var(--ink-muted)}
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1)}
+  .fade-in.visible{opacity:1;transform:none}
+  .stagger-children>*{opacity:0;transform:translateY(24px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1)}
+  .stagger-children.visible>*:nth-child(1){opacity:1;transform:none;transition-delay:0s}
+  .stagger-children.visible>*:nth-child(2){opacity:1;transform:none;transition-delay:0.08s}
+  .stagger-children.visible>*:nth-child(3){opacity:1;transform:none;transition-delay:0.16s}
+  .stagger-children.visible>*:nth-child(4){opacity:1;transform:none;transition-delay:0.24s}
+  .stagger-children.visible>*:nth-child(5){opacity:1;transform:none;transition-delay:0.32s}
+  .stagger-children.visible>*:nth-child(6){opacity:1;transform:none;transition-delay:0.40s}
+  @media(max-width:700px){nav{padding:0 1rem}.nav-links{display:none}.page-wrap{padding-top:calc(var(--nav-h)+2.5rem);padding-left:1rem;padding-right:1rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="ella-portfolio.html" class="nav-logo">ella faith.</a>
+  <ul class="nav-links">
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="experience.html" class="active">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <div class="fade-in">
+    <h1 class="page-title">My<br><em>experience.</em></h1>
+    <p class="page-sub">Co-ops, internships, clubs, and skills.</p>
+    <a href="resume.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:0.5rem;padding:0.6rem 1.2rem;background:var(--ink);color:#fff;border-radius:999px;font-size:0.85rem;font-weight:500;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">↓ Download Resume</a>
+  </div>
+
+  <h2 class="section-label fade-in">Co-ops &amp; <em>Internships</em></h2>
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-meta">
+        <span class="exp-org">Hill Holliday</span>
+        <span class="exp-period">Jul 2026 – Present</span>
+        <span class="exp-period" style="background:var(--coral-light);border-color:var(--coral);color:var(--coral)">Co-op</span>
+      </div>
+      <div class="exp-role">Media Co-op</div>
+      <ul class="exp-bullets">
+        <li>Starting July 2026</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <span class="exp-org">Fidelity Investments</span>
+        <span class="exp-period">Jul – Dec 2025</span>
+        <span class="exp-period" style="background:var(--coral-light);border-color:var(--coral);color:var(--coral)">Co-op</span>
+      </div>
+      <div class="exp-role">Communications Associate · Fidelity Labs</div>
+      <ul class="exp-bullets">
+        <li>Executed daily internal and external communications for seven emerging businesses, including GTM strategies and brand messaging</li>
+        <li>Point of contact for client and internal events, ensuring all logistics were carried out on time</li>
+        <li>Delivered a strategic social media playbook to business unit leadership with standardized brand guidelines</li>
+      </ul>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <span class="exp-org">Boston Ballet</span>
+        <span class="exp-period">Jun – Dec 2024</span>
+        <span class="exp-period" style="background:var(--coral-light);border-color:var(--coral);color:var(--coral)">Co-op</span>
+      </div>
+      <div class="exp-role">Studio Administrator and Operations · Boston Ballet School</div>
+      <ul class="exp-bullets">
+        <li>Supported three departments on marketing, retention, and program development</li>
+        <li>Main point of contact for all school operations questions and day-to-day coordination</li>
+      </ul>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <span class="exp-org">Dakota Medical Foundation</span>
+        <span class="exp-period">May – Aug 2023</span>
+        <span class="exp-period" style="background:var(--coral-light);border-color:var(--coral);color:var(--coral)">Internship</span>
+      </div>
+      <div class="exp-role">Intern</div>
+      <ul class="exp-bullets">
+        <li>Analyzed financial statements and reported findings to CFO</li>
+        <li>Organized 100+ personnel and accounting files, streamlining records management across departments</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="section-label fade-in">Clubs &amp; <em>Organizations</em></h2>
+  <div class="clubs-grid stagger-children">
+    <div class="club-card">
+      <div class="club-icon" style="background:var(--lime-light)">🧭</div>
+      <div class="club-name">Scout</div>
+      <div class="club-subroles">
+        <div class="club-subrole">
+          <div class="club-role">Operations Director</div>
+          <div class="club-period">Jun 2025 – Jun 2026</div>
+          <p class="club-desc">Directed financial operations, budget planning, and onboarding systems. Collaborated with the Executive Director to set org priorities.</p>
+        </div>
+        <div class="club-subrole">
+          <div class="club-role">Conference Marketer</div>
+          <div class="club-period">Aug 2024 – May 2025</div>
+          <p class="club-desc">Led public outreach and sponsorship marketing for Scout's annual conference events.</p>
+        </div>
+      </div>
+    </div>
+    <div class="club-card">
+      <div class="club-icon" style="background:var(--sky-light)">📣</div>
+      <div class="club-name">NU Marketing Association</div>
+      <div class="club-subroles">
+        <div class="club-subrole">
+          <div class="club-role">Vice President of Member Outreach</div>
+          <div class="club-period">Jan 2025 – Dec 2025</div>
+          <p class="club-desc">Published LinkedIn recaps after each meeting. Ran surveys with 40+ members and generated monthly reports, driving a 38% increase in enrollment.</p>
+        </div>
+        <div class="club-subrole">
+          <div class="club-role">Membership Engagement Chair</div>
+          <div class="club-period">May 2024 – Dec 2024</div>
+          <p class="club-desc">Focused on customer engagement and analytics to support member retention and outreach initiatives.</p>
+        </div>
+      </div>
+    </div>
+    <div class="club-card">
+      <div class="club-icon" style="background:var(--coral-light)">⚡</div>
+      <div class="club-name">Northeastern Electric Racing</div>
+      <div class="club-role">Social Lead</div>
+      <div class="club-period">Aug 2024 – Jul 2025</div>
+      <p class="club-desc">Led social media strategy and content for Northeastern's competitive electric racing team.</p>
+    </div>
+    <div class="club-card">
+      <div class="club-icon" style="background:var(--marigold-light)">🤝</div>
+      <div class="club-name">FIND, Inc.</div>
+      <div class="club-role">District 1 Treasurer</div>
+      <div class="club-period">Jun 2024 – Jun 2025</div>
+      <p class="club-desc">Managed budget planning and financial accountability for the Filipino Intercollegiate Networking Dialogue's District 1.</p>
+    </div>
+    <div class="club-card">
+      <div class="club-icon" style="background:var(--lavender-light)">🌺</div>
+      <div class="club-name">Barkada</div>
+      <div class="club-role">Member &amp; Choreographer</div>
+      <div class="club-period">Sept 2023 – Current</div>
+      <p class="club-desc">Active member and choreographer for Northeastern's Filipino cultural organization, contributing to performances and community events.</p>
+    </div>
+  </div>
+
+  <h2 class="section-label fade-in"><em>Education</em></h2>
+  <div class="clubs-grid stagger-children">
+    <div class="club-card">
+      <div class="club-icon" style="background:var(--pink-light)">🎓</div>
+      <div class="club-name">Northeastern University</div>
+      <div class="club-role">B.S. Business Administration &amp; Communication Studies</div>
+      <div class="club-period">Expected May 2027</div>
+      <p class="club-desc">Concentrations in Marketing Analytics &amp; Brand Management.</p>
+    </div>
+  </div>
+
+  <h2 class="section-label fade-in">Skills &amp; <em>Tools</em></h2>
+  <div class="skills-rows fade-in">
+    <div class="skill-row">
+      <span class="skill-row-label">Marketing</span>
+      <div class="skill-row-tags">
+        <span class="skill-tag">Brand Management</span>
+        <span class="skill-tag">Marketing Research</span>
+        <span class="skill-tag">GTM Strategy</span>
+        <span class="skill-tag">Social Media Strategy</span>
+        <span class="skill-tag">Consumer Data Analysis</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-row-label">Communications</span>
+      <div class="skill-row-tags">
+        <span class="skill-tag">Internal Comms</span>
+        <span class="skill-tag">External Comms</span>
+        <span class="skill-tag">Journalism</span>
+        <span class="skill-tag">Content Creation</span>
+        <span class="skill-tag">Brand Messaging</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-row-label">Operations</span>
+      <div class="skill-row-tags">
+        <span class="skill-tag">Budget Planning</span>
+        <span class="skill-tag">Event Management</span>
+        <span class="skill-tag">Onboarding Systems</span>
+        <span class="skill-tag">Cross-functional Coordination</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-row-label">Tools</span>
+      <div class="skill-row-tags">
+        <span class="skill-tag">Microsoft Suite</span>
+        <span class="skill-tag">Google Workspace</span>
+        <span class="skill-tag">R / RStudio</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Adobe Suite</span>
+        <span class="skill-tag">Canva</span>
+        <span class="skill-tag">Flourish</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Sprout Social</span>
+        <span class="skill-tag">WordPress</span>
+        <span class="skill-tag">DocuWare</span>
+        <span class="skill-tag">GP Dynamics</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer><p>© 2026 Ella Faith Albano · <a href="index.html" style="color:var(--ink-muted)">Back to home</a></p></footer>
+
+<script>
+  const els=document.querySelectorAll('.fade-in,.stagger-children');
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.1});
+  els.forEach(el=>obs.observe(el));
+  const timeline=document.querySelector('.exp-timeline');
+  const expItems=document.querySelectorAll('.exp-item');
+  if(timeline){
+    const tlObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){timeline.classList.add('line-drawn');expItems.forEach((item,i)=>setTimeout(()=>item.classList.add('dot-visible'),200+i*150));tlObs.unobserve(x.target)}})},{threshold:0.1});
+    tlObs.observe(timeline);
+  }
+</script>
+</body>
+</html>

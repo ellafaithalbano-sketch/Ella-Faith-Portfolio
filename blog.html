@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Ella Faith Albano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#FBF7EF;--soft-white:#FFFDF9;--ink:#1A1612;--ink-muted:#5C5449;--coral:#E8533A;--coral-light:#FAEAE6;--sky:#3D7EBF;--sky-light:#E4EFF9;--lime:#6BBF3D;--lime-light:#EAF5E2;--marigold:#F2A83B;--marigold-light:#FDF2DC;--lavender:#8B6FD4;--lavender-light:#EEE9FA;--pink:#D44F7A;--pink-light:#FAEAF1;--border:rgba(26,22,18,0.1);--nav-h:64px; }
+  *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;overflow-x:hidden}
+  nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--cream);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:100}
+  .nav-logo{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;color:var(--ink);text-decoration:none}
+  .nav-links{display:flex;gap:0.25rem;list-style:none}
+  .nav-links a{font-size:0.875rem;font-weight:500;color:var(--ink-muted);text-decoration:none;padding:0.4rem 0.75rem;border-radius:999px;transition:all 0.2s}
+  .nav-links a:hover,.nav-links a.active{background:var(--ink);color:var(--cream)}
+  .page-wrap{max-width:900px;margin:0 auto;padding:calc(var(--nav-h) + 3rem) 2rem 5rem}
+  .page-header{margin-bottom:2rem}
+  .page-title{font-family:'Fraunces',serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:600;line-height:1.0;margin-bottom:0.5rem}
+  .page-title em{font-style:italic;font-weight:300;color:var(--coral)}
+  .page-sub{font-size:0.95rem;color:var(--ink-muted)}
+  .filter-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem}
+  .filter-btn{font-size:0.8rem;font-weight:500;padding:0.3rem 0.85rem;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--ink-muted);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+  .filter-btn:hover,.filter-btn.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+  .blog-card{background:var(--soft-white);border:1px solid var(--border);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--ink);transition:transform 0.25s cubic-bezier(0.22,1,0.36,1),box-shadow 0.25s ease}
+  .blog-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(26,22,18,0.1)}
+  .blog-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
+  .blog-thumb{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:3rem}
+  .blog-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .blog-card.featured .blog-thumb{aspect-ratio:unset;height:100%;min-height:220px}
+  .blog-body{padding:1.25rem}
+  .blog-tag{font-size:0.7rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.6rem;color:var(--coral)}
+  .blog-title{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;line-height:1.25;margin-bottom:0.5rem}
+  .blog-card.featured .blog-title{font-size:1.4rem}
+  .blog-excerpt{font-size:0.85rem;color:var(--ink-muted);line-height:1.55;margin-top:0.4rem}
+  .blog-date{font-size:0.8rem;color:var(--ink-muted);margin-top:0.75rem}
+  footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:0.8rem;color:var(--ink-muted)}
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1)}
+  .fade-in.visible{opacity:1;transform:none}
+  .stagger-children>*{opacity:0;transform:translateY(24px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1)}
+  .stagger-children.visible>*{opacity:1;transform:none}
+  .stagger-children.visible>*:nth-child(1){transition-delay:0s}
+  .stagger-children.visible>*:nth-child(2){transition-delay:0.07s}
+  .stagger-children.visible>*:nth-child(3){transition-delay:0.14s}
+  .stagger-children.visible>*:nth-child(4){transition-delay:0.21s}
+  .stagger-children.visible>*:nth-child(5){transition-delay:0.28s}
+  .stagger-children.visible>*:nth-child(6){transition-delay:0.35s}
+  .stagger-children.visible>*:nth-child(7){transition-delay:0.42s}
+  @media(max-width:700px){nav{padding:0 1rem}.nav-links{display:none}.page-wrap{padding-top:calc(var(--nav-h)+2rem);padding-left:1rem;padding-right:1rem}.blog-grid{grid-template-columns:1fr}.blog-card.featured{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="ella-portfolio.html" class="nav-logo">ella faith.</a>
+  <ul class="nav-links">
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+  </ul>
+</nav>
+<div class="page-wrap">
+  <div class="page-header fade-in">
+    <h1 class="page-title">What I've been<br><em>writing about.</em></h1>
+    <p class="page-sub">Essays, features, and journalism from class, co-op, and curiosity.</p>
+  </div>
+  <div class="filter-row fade-in">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="journalism">Journalism</button>
+    <button class="filter-btn" data-filter="technology">Technology</button>
+    <button class="filter-btn" data-filter="professional">Professional</button>
+    <button class="filter-btn" data-filter="travel">Travel</button>
+    <button class="filter-btn" data-filter="features">Features</button>
+  </div>
+  <div class="blog-grid stagger-children">
+    <a class="blog-card" href="post-scout-leadership.html" data-category="professional">
+      <div class="blog-thumb"><img src="images/scout-1.jpg" alt="Scout conference" onerror="this.style.display='none'; this.parentElement.textContent='📷 Add photo — scout-1.jpg'" /></div>
+      <div class="blog-body">
+        <div class="blog-tag">Professional</div>
+        <div class="blog-title">Building Scout Forward</div>
+        <div class="blog-date">May 2026</div>
+      </div>
+    </a>
+    <a class="blog-card" href="post-london.html" data-category="travel">
+      <div class="blog-thumb"><img src="images/london-1.jpg" alt="London" onerror="this.style.display='none'; this.parentElement.textContent='📷 Add photo — london-1.jpg'" /></div>
+      <div class="blog-body">
+        <div class="blog-tag">Travel</div>
+        <div class="blog-title">Going Back to London</div>
+        <div class="blog-date">March 2026</div>
+      </div>
+    </a>
+    <a class="blog-card" href="post-fidelity-20-years.html" data-category="professional">
+      <div class="blog-thumb"><img src="images/fidelity-1.jpg" alt="Fidelity Labs anniversary" onerror="this.style.display='none'; this.parentElement.textContent='📷 Add photo — fidelity-1.jpg'" /></div>
+      <div class="blog-body">
+        <div class="blog-tag">Professional</div>
+        <div class="blog-title">Celebrating 20 Years of Innovation</div>
+        <div class="blog-date">December 2025 · Fidelity Labs</div>
+      </div>
+    </a>
+    <a class="blog-card" href="post-fidelity-coop.html" data-category="professional">
+      <div class="blog-thumb" style="background:var(--lavender-light)">💡</div>
+      <div class="blog-body">
+        <div class="blog-tag">Professional</div>
+        <div class="blog-title">My Time at Fidelity Labs</div>
+        <div class="blog-date">December 2025</div>
+      </div>
+    </a>
+    <a class="blog-card featured" href="post-scooby-doo.html" data-category="journalism">
+      <div class="blog-thumb" style="background:var(--marigold-light)">🐾</div>
+      <div class="blog-body">
+        <div class="blog-tag">Journalism</div>
+        <div class="blog-title">Scooby-Doo's evolution: 50+ years of social change in animation</div>
+        <p class="blog-excerpt">How one cartoon quietly tracked American culture across five decades of social change.</p>
+        <div class="blog-date">November 2025</div>
+      </div>
+    </a>
+    <a class="blog-card" href="post-boston-ballet-coop.html" data-category="professional">
+      <div class="blog-thumb" style="background:var(--lavender-light)">🩰</div>
+      <div class="blog-body">
+        <div class="blog-tag">Professional</div>
+        <div class="blog-title">Beyond the Classroom: My Co-op at Boston Ballet School</div>
+        <div class="blog-date">June 2025</div>
+      </div>
+    </a>
+    <a class="blog-card" href="post-anastasia.html" data-category="features journalism">
+      <div class="blog-thumb" style="background:var(--pink-light)">🎭</div>
+      <div class="blog-body">
+        <div class="blog-tag">Features · Journalism</div>
+        <div class="blog-title">Students Bring Broadway to Blackman: NU Stage's 'Anastasia'</div>
+        <div class="blog-date">April 2025</div>
+      </div>
+    </a>
+    <a class="blog-card" href="post-cross-market-gaming.html" data-category="technology">
+      <div class="blog-thumb" style="background:var(--sky-light)">🎮</div>
+      <div class="blog-body">
+        <div class="blog-tag">Technology</div>
+        <div class="blog-title">Cross-Market Gaming: How Publishers Navigate Video Gaming Preferences</div>
+        <div class="blog-date">April 2025</div>
+      </div>
+    </a>
+    <a class="blog-card" href="post-noam-dance.html" data-category="features">
+      <div class="blog-thumb" style="background:var(--lime-light)">💃</div>
+      <div class="blog-body">
+        <div class="blog-tag">Features</div>
+        <div class="blog-title">Staying in Motion: Noam's Passion for Dance</div>
+        <div class="blog-date">March 2025</div>
+      </div>
+    </a>
+    <a class="blog-card" href="post-ai-transcription.html" data-category="technology">
+      <div class="blog-thumb" style="background:var(--coral-light)">🤖</div>
+      <div class="blog-body">
+        <div class="blog-tag">Technology</div>
+        <div class="blog-title">The Future of Transcription: How AI is Changing Journalism</div>
+        <div class="blog-date">February 2025</div>
+      </div>
+    </a>
+    <a class="blog-card" href="post-rooted-living.html" data-category="features journalism">
+      <div class="blog-thumb" style="background:#F0F7EE">🌱</div>
+      <div class="blog-body">
+        <div class="blog-tag">Features · Journalism</div>
+        <div class="blog-title">Rooted in Purpose: An Interview with Rachel Domb</div>
+        <div class="blog-date">February 2025</div>
+      </div>
+    </a>
+    <a class="blog-card" href="post-thailand.html" data-category="travel">
+      <div class="blog-thumb" style="background:var(--marigold-light)">✈️</div>
+      <div class="blog-body">
+        <div class="blog-tag">Travel</div>
+        <div class="blog-title">Journey to Thailand</div>
+        <div class="blog-date">January 2025</div>
+      </div>
+    </a>
+  </div>
+</div>
+<footer><p>© 2026 Ella Faith Albano · <a href="index.html" style="color:var(--ink-muted)">Back to home</a></p></footer>
+<script>
+  const els=document.querySelectorAll('.fade-in,.stagger-children');
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.1});
+  els.forEach(el=>obs.observe(el));
+  const filterBtns=document.querySelectorAll('.filter-btn');
+  const cards=document.querySelectorAll('.blog-card');
+  filterBtns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      filterBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter=btn.dataset.filter;
+      cards.forEach(card=>{
+        const categories=card.dataset.category.split(' ');
+        card.style.display=(filter==='all'||categories.includes(filter))?'':'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
